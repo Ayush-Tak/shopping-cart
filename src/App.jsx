@@ -24,7 +24,7 @@ function App() {
     <>
       <Navbar cartCount = {cart.length} wishlistCount = {wishlist.length}/>
     <main>
-      <Outlet context ={{  handleAddToCart, handleAddToWishlist }}/>
+      <Outlet context ={{  cart, wishlist, handleAddToCart, handleAddToWishlist }}/>
     </main>
     </>
   )

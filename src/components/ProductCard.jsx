@@ -1,9 +1,10 @@
-function ProductCard({product}){
+function ProductCard({product, handleAddToCart, handleAddToWishlist}){
     return(
         <div>
             <h2>{product.name}</h2>
             <p>Price: ${product.price}</p>
-            <button>Add to Cart</button>
+            <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+            <button onClick={() => handleAddToWishlist(product)}>Add to Wishlist</button>
         </div>
     );
 };

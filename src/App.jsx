@@ -8,6 +8,7 @@ function App() {
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
 
+  // Handling add to cart 
   const handleAddToCart = (product) => {
     const existingProduct = cart.find(item => item.id === product.id)
 
@@ -24,6 +25,7 @@ function App() {
     console.log('Current cart:', cart);
   };
 
+  // Handling add to wishlist
   const handleAddToWishlist = (product)=>{
     const isWishlisted = wishlist.find(item => item.id === product.id)
 
@@ -37,13 +39,39 @@ function App() {
     }
   }
 
+  // Handling removing from cart
+
+  const handleRemoveFromCart = (productID) => {
+    setCart(cart.filter(item => item.id !== productID))
+  };
+
+  // handling updating product qty in cart
+
+  const handleUpdateQuantity = (productID, newQuantity) => {
+    if (newQuantity <= 0 ){
+      handleRemoveFromCart(productID);
+    } else {
+      setCart(cart.map(item =>
+        item.id === productID
+        ? {...item, quantity:newQuantity}
+        : item
+      ));
+    }
+  };
 
 
   return (
     <>
       <Navbar cartCount = {cart.length} wishlistCount = {wishlist.length}/>
     <main>
-      <Outlet context ={{  cart, wishlist, handleAddToCart, handleAddToWishlist }}/>
+      <Outlet context ={{
+          cart,
+          wishlist,
+          handleAddToCart,
+          handleAddToWishlist,
+          handleRemoveFromCart,
+          handleUpdateQuantity
+           }}/>
     </main>
     </>
   )

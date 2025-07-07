@@ -1,4 +1,4 @@
-import './App.css'
+
 import {Outlet} from 'react-router-dom'
 import {useState} from 'react';
 
@@ -59,6 +59,13 @@ function App() {
     }
   };
 
+  // handling moving to cart from wishlist
+
+  const handleMoveToCart = (product) => {
+    handleAddToCart(product);
+    handleAddToWishlist(product);
+  }
+
 
   return (
     <>
@@ -70,7 +77,8 @@ function App() {
           handleAddToCart,
           handleAddToWishlist,
           handleRemoveFromCart,
-          handleUpdateQuantity
+          handleUpdateQuantity,
+          handleMoveToCart
            }}/>
     </main>
     </>

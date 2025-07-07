@@ -67,6 +67,14 @@ function App() {
     handleAddToWishlist(product);
   }
 
+  // handling checkout
+
+  const handleCheckout = () => {
+    if (cart.length >0) {
+      alert("Thank You for your purchase, you fake order won't be on the way");
+      setCart([]);
+    }
+  };
 
   return (
     <>
@@ -80,7 +88,8 @@ function App() {
           handleAddToWishlist,
           handleRemoveFromCart,
           handleUpdateQuantity,
-          handleMoveToCart
+          handleMoveToCart,
+          handleCheckout
            }}/>
     </main>
     <Footer />

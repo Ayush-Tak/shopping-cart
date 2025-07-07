@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function CartPage() {
-  const { cart, handleRemoveFromCart, handleUpdateQuantity } =
+  const { cart, handleRemoveFromCart, handleUpdateQuantity, handleCheckout } =
     useOutletContext();
 
   const calculateTotal = () => {
@@ -82,6 +82,12 @@ function CartPage() {
           </ul>
           <div className="mt-6 text-right">
             <h2 className="text-2xl font-bold">Total: ${calculateTotal()}</h2>
+            <button
+              onClick={handleCheckout}
+              className="mt-4 px-8 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition text-lg font-medium shadow-md"
+            >
+              Proceed to Checkout
+            </button>
           </div>
         </>
       )}

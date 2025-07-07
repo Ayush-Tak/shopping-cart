@@ -2,7 +2,7 @@
 
 A responsive e-commerce storefront built with React, featuring a dynamic shopping cart, wishlist, and product catalog fetched from a live API. This project was developed as part of The Odin Project curriculum.
 
-**[Live Demo](to-be-updated)** | **[Project Assignment](https://www.theodinproject.com/lessons/javascript-shopping-cart)**
+**[Live Demo](to-be-updated)** | **[Project Assignment](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart)**
 
 ![Fake Store Mate Screenshot](./public/screenshot_homepage.png)
 

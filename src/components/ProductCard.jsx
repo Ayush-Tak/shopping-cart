@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function ProductCard({product, handleAddToCart, handleAddToWishlist,wishlist}){
     const isWishlisted = wishlist.find(item=> item.id === product.id);
     return (
@@ -37,6 +39,19 @@ function ProductCard({product, handleAddToCart, handleAddToWishlist,wishlist}){
         </div>
       </div>
     );
+};
+
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
+  handleAddToCart: PropTypes.func.isRequired,
+  handleAddToWishlist: PropTypes.func.isRequired,
+  wishlist: PropTypes.array.isRequired,
 };
 
 export default ProductCard;

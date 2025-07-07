@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Navbar({ cartCount, wishlistCount }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -129,5 +130,10 @@ function Navbar({ cartCount, wishlistCount }) {
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  cartCount: PropTypes.number.isRequired,
+  wishlistCount: PropTypes.number.isRequired,
+};
 
 export default Navbar;

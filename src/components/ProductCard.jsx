@@ -9,7 +9,12 @@ function ProductCard({product, handleAddToCart, handleAddToWishlist,wishlist}){
             className="w-full h-40 object-contain mb-4 rounded"
           />
           <h2 className="text-xl font-bold mb-2 h-16 truncate" >{product.title}</h2>
-          <p className="mb-4">${product.price}</p>
+          <div className="flex justify-between items-center mb-4">
+            <p className="text-lg font-semibold text-gray-800">${product.price.toFixed(2)}</p>
+            <p className="text-xs font-medium text-blue-800 bg-blue-100 px-2 py-1 rounded-full capitalize">
+              {product.category}
+            </p>
+          </div>
         </div>
         <div className="flex justify-around items-center">
           <button
@@ -22,7 +27,7 @@ function ProductCard({product, handleAddToCart, handleAddToWishlist,wishlist}){
             onClick={() => handleAddToWishlist(product)}
             className="p-2 rounded-full hover:bg-gray-200"
           >
-            {/* Conditional heart icon */}
+            
             {isWishlisted ? (
               <span className="text-red-500 text-2xl">♥</span> // Filled heart
             ) : (

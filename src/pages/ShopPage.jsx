@@ -2,7 +2,7 @@ import ProductCard from "../components/ProductCard";
 import { useOutletContext } from "react-router-dom";
 
 function ShopPage(){
-    const { handleAddToCart, handleAddToWishlist } = useOutletContext();
+    const { handleAddToCart, handleAddToWishlist ,wishlist} = useOutletContext();
 
     const products = [
         { id: 1, name: "Product 1", price: 10 },
@@ -19,7 +19,8 @@ function ShopPage(){
                         key={product.id} 
                         product={product} 
                         handleAddToCart={handleAddToCart} 
-                        handleAddToWishlist={handleAddToWishlist} 
+                        handleAddToWishlist={handleAddToWishlist}
+                        wishlist ={wishlist} 
                     />
                 ))}
             </div>

@@ -1,8 +1,10 @@
 # Fake Store Mate
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/58e2e900-25c5-4adb-836f-59f4bf6923e8/deploy-status)](https://app.netlify.com/projects/fakeshoppingcartapp/deploys)
+
 A responsive e-commerce storefront built with React, featuring a dynamic shopping cart, wishlist, and product catalog fetched from a live API. This project was developed as part of The Odin Project curriculum.
 
-**[Live Demo](to-be-updated)** | **[Project Assignment](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart)**
+**[Live Demo](https://fakeshoppingcartapp.netlify.app/)** | **[Project Assignment](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart)**
 
 ![Fake Store Mate Screenshot](./public/screenshot_homepage.png)
 

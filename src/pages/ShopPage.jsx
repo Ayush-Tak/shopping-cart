@@ -53,8 +53,15 @@ function ShopPage() {
     );
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-center my-8">Products</h1>
+    <div className="container mx-auto px-4">
+      <div className="text-center py-12 bg-gray-50 rounded-lg my-8">
+        <h1 className="text-5xl font-extrabold text-gray-800 tracking-tight">
+          Our Collection
+        </h1>
+        <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+          Discover a curated selection of products, hand-picked for quality and style.
+        </p>
+      </div>
       <div className="flex flex-wrap justify-center gap-4">
         {products.map((product) => (
           <ProductCard

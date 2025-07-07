@@ -3,6 +3,7 @@ import {Outlet} from 'react-router-dom'
 import {useState} from 'react';
 
 import Navbar from './components/Navbar'
+import Footer from './components/Footer';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -69,8 +70,9 @@ function App() {
 
   return (
     <>
+    <div className="flex flex-col min-h-screen">
       <Navbar cartCount = {cart.length} wishlistCount = {wishlist.length}/>
-    <main>
+    <main className='flex-grow'>
       <Outlet context ={{
           cart,
           wishlist,
@@ -81,8 +83,10 @@ function App() {
           handleMoveToCart
            }}/>
     </main>
+    <Footer />
+    </div>
     </>
-  )
+  );
 }
 
 export default App

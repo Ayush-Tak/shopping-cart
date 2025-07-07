@@ -1,4 +1,5 @@
 import {useOutletContext} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function WishListPage(){
     const {wishlist,handleMoveToCart,handleAddToWishlist} = useOutletContext();
@@ -7,7 +8,18 @@ function WishListPage(){
         <div className="p-4">
             <h1 className="text-2xl font-bold mb-4">Your Wishlist</h1>
             {wishlist.length === 0 ? (
-                <p>Your wishlist is empty</p>
+                <>
+          <div className="flex flex-col">
+          <p className=" text-3xl font-semibold leading-normal text-gray-900 text-center ">Your Wishlist Is Empty 💔</p>
+          <p className="text-2xl font-stretch-ultra-expanded leading-normal text-gray-700 text-center">Go fill it up 🎊</p>
+            <Link
+              to="/shop"
+              className="px-6 py-3 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition text-lg font-medium shadow-md text-center"
+            >
+              Shop Now
+            </Link>
+            </div>
+          </>
             ) : (
                 <ul>
                     {wishlist.map((item) => (

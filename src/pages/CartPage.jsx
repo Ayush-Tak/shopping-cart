@@ -19,7 +19,7 @@ function CartPage(){
                 <><ul>
                         {cart.map((item) => (
                             <li key={item.id} className="flex justify-between items-center border-b py-2">
-                                <span>{item.name} - ${item.price}</span>
+                                <span>{item.title} - ${item.price}</span>
                                 <div className="flex items-center">
                                     <button onClick={() => handleUpdateQuantity(item.id, item.quantity - 1)} className="bg-gray-300 px-2 rounded-l">-</button>
                                     <span className="px-4">{item.quantity}</span>

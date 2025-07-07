@@ -12,7 +12,7 @@ function WishListPage(){
                 <ul>
                     {wishlist.map((item) => (
                         <li key={item.id} className="flex justify-between items-center border-b py-2">
-                            <span>{item.name}- ${item.price}</span>
+                            <span>{item.title}- ${item.price}</span>
                             <div className="flex items-center">
                                 <button onClick={()=> handleMoveToCart(item)}
                                     className="bg-blue-500 text-white px-3 py-1 rounded mr-2 hover:bg-blue-700">
